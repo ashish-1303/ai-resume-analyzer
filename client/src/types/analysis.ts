@@ -3,7 +3,6 @@ export interface ScoreBreakdown {
   score: number;
   reason: string;
 }
-
 export interface ResumeAnalysisResult {
   atsScore: number;
   summary: string;
@@ -15,7 +14,6 @@ export interface ResumeAnalysisResult {
   scoreBreakdown: ScoreBreakdown[];
   priorityFixes: string[];
 }
-
 export interface AnalysisResponse {
   id: string;
   fileName: string;

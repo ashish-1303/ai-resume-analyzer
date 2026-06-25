@@ -1,7 +1,6 @@
 interface ScoreCircleProps {
   score: number;
 }
-
 export const ScoreCircle = ({ score }: ScoreCircleProps) => {
   const clampedScore = Math.max(0, Math.min(100, score));
   const background = `conic-gradient(#2FBF9B ${clampedScore * 3.6}deg, rgba(23, 32, 38, 0.1) 0deg)`;

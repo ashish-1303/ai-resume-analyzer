@@ -17,10 +17,8 @@ export const App = () => {
       setError("Choose a PDF, DOCX, or TXT resume first.");
       return;
     }
-
     setIsLoading(true);
     setError("");
-
     try {
       const result = await analyzeResume(selectedFile);
       setAnalysis(result);
@@ -60,7 +58,6 @@ export const App = () => {
             </div>
           </div>
         </header>
-
         <div className="grid gap-6 lg:grid-cols-[420px_1fr]">
           <aside className="rounded-lg border border-ink/10 bg-white p-5 shadow-sm">
             <FileUpload selectedFile={selectedFile} onFileSelect={setSelectedFile} disabled={isLoading} />
@@ -71,7 +68,6 @@ export const App = () => {
                 <p>{error}</p>
               </div>
             )}
-
             <button
               type="button"
               onClick={handleAnalyze}
@@ -82,7 +78,6 @@ export const App = () => {
               {isLoading ? "Analyzing resume" : "Analyze resume"}
             </button>
           </aside>
-
           <AnalysisPanel analysis={analysis?.result ?? null} fileName={analysis?.fileName} isLoading={isLoading} />
         </div>
       </section>

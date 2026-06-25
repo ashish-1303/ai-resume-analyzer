@@ -7,6 +7,5 @@ export const analyzeResume = async (file: File) => {
   const response = await axios.post<AnalysisResponse>("/api/analysis", formData, {
     headers: { "Content-Type": "multipart/form-data" }
   });
-
   return response.data;
 };

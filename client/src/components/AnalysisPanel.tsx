@@ -8,7 +8,6 @@ interface AnalysisPanelProps {
   fileName?: string;
   isLoading: boolean;
 }
-
 export const AnalysisPanel = ({ analysis, fileName, isLoading }: AnalysisPanelProps) => {
   if (isLoading) {
     return (
@@ -21,7 +20,6 @@ export const AnalysisPanel = ({ analysis, fileName, isLoading }: AnalysisPanelPr
       </section>
     );
   }
-
   if (!analysis) {
     return (
       <section className="flex min-h-[520px] items-center justify-center rounded-lg border border-ink/10 bg-white p-6 shadow-sm">
@@ -46,14 +44,12 @@ export const AnalysisPanel = ({ analysis, fileName, isLoading }: AnalysisPanelPr
         </div>
         <ScoreCircle score={analysis.atsScore} />
       </div>
-
       <div className="mt-5 grid gap-4 xl:grid-cols-2">
         <InfoBlock icon={<Target />} title="Role fit" items={[analysis.roleFit]} />
         <InfoBlock icon={<TrendingUp />} title="Priority fixes" items={analysis.priorityFixes} accent="coral" />
         <InfoBlock icon={<CheckCircle2 />} title="Strengths" items={analysis.strengths} accent="mint" />
         <InfoBlock icon={<Lightbulb />} title="Improvements" items={analysis.improvements} accent="amber" />
       </div>
-
       <div className="mt-5 grid gap-4 xl:grid-cols-[1fr_340px]">
         <div className="rounded-lg border border-ink/10 p-4">
           <div className="mb-4 flex items-center gap-2">
@@ -75,7 +71,6 @@ export const AnalysisPanel = ({ analysis, fileName, isLoading }: AnalysisPanelPr
             ))}
           </div>
         </div>
-
         <div className="space-y-4">
           <TagBlock title="Missing keywords" values={analysis.missingKeywords} />
           <TagBlock title="Missing sections" values={analysis.missingSections} tone="coral" />

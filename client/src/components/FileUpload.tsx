@@ -9,11 +9,9 @@ interface FileUploadProps {
 }
 
 const acceptedTypes = ".pdf,.docx,.txt";
-
 export const FileUpload = ({ selectedFile, onFileSelect, disabled }: FileUploadProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
-
   const selectFile = (files: FileList | null) => {
     const file = files?.[0];
     if (file) {
@@ -48,7 +46,6 @@ export const FileUpload = ({ selectedFile, onFileSelect, disabled }: FileUploadP
         <span className="mt-4 text-base font-semibold text-ink">Drop resume here or browse</span>
         <span className="mt-2 text-sm leading-6 text-ink/60">PDF, DOCX, or TXT up to 5 MB</span>
       </button>
-
       <input
         ref={inputRef}
         type="file"
@@ -57,7 +54,6 @@ export const FileUpload = ({ selectedFile, onFileSelect, disabled }: FileUploadP
         disabled={disabled}
         onChange={(event) => selectFile(event.target.files)}
       />
-
       {selectedFile && (
         <div className="mt-4 flex items-center gap-3 rounded-lg border border-ink/10 bg-white p-3">
           <File className="h-5 w-5 shrink-0 text-mint" />
