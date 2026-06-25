@@ -23,9 +23,7 @@ const analysisSchema = z.object({
   ),
   priorityFixes: z.array(z.string()).min(1)
 });
-
 const genAI = new GoogleGenerativeAI(env.GEMINI_API_KEY);
-
 export const analyzeResumeWithGemini = async (resumeText: string): Promise<ResumeAnalysisResult> => {
   const model = genAI.getGenerativeModel({ model: env.GEMINI_MODEL });
 
